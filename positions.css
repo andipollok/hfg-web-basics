@@ -1,0 +1,65 @@
+section {
+	box-sizing: border-box;
+	padding: 40px;
+}
+
+#fixed-block {
+	position: fixed;
+	top: 200px;
+	left: 200px;
+	background-color: black;
+	color: white;
+	padding: 40px;
+	width: 400px;
+	z-index: 1;
+}
+
+#static-block {
+	position: static;
+	background-color: lightcyan;
+	width: 400px;
+}
+
+#relative-block {
+	position: relative;
+	background-color: lightgreen;
+	width: 400px;
+	height: 180px;
+	top: 10px;
+	left: 60px;
+}
+
+#absolute-block {
+	position: absolute;
+	top: 150px;
+	left: 120px;
+	background-color: lightpink;
+}
+
+#sticky-block {
+	position: sticky;
+	background-color: lightyellow;
+	width: 400px;
+	top: 0;
+}
+
+#sticky-block-in-element {
+	position: sticky;
+	background-color: yellow;
+	width: 400px;
+	top: 0px;
+}
+
+#highlight {
+	float: right;
+	background-color: aliceblue;
+}
+
+article {
+	width: 50%;
+}
+
+article p {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}

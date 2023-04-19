@@ -1,0 +1,11 @@
+.floatimage {
+	width: 50%;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.clearboth {
+	clear: both;
+	background-color: lightcoral;
+}

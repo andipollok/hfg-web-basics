@@ -1,0 +1,56 @@
+body {
+	padding: 40px;
+	height: 9999px;
+}
+
+nav {
+	margin-bottom: 50px;
+}
+
+nav a {
+	margin-right: 20px;
+	text-decoration: none;
+	padding: 4px;
+}
+
+nav.fade a {
+	background-color: white;
+	transition: background-color 2s;
+}
+
+nav.fade a:hover {
+	background-color: orangered;
+	color: white;
+}
+
+nav.moveup a {
+	position: relative;
+	top: 0px;
+	transition: 0.1s;
+}
+
+nav.moveup a:hover {
+	top: -4px;
+}
+
+nav.animateunderline a {
+	text-decoration: none;
+	position: relative;
+}
+
+nav.animateunderline a::after {
+	content: '';
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: red;
+	transform: scaleX(0);
+	transform-origin: left;
+	height: 2px;
+	transition: 0.2s;
+}
+
+nav.animateunderline a:hover::after {
+	transform: scaleX(1);
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<title>Seitentitel</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="animation.css">
+
+	<script>
+		window.onscroll = function() {
+			scrollRotate();
+		};
+
+		function scrollRotate() {
+			let image = document.getElementById("drehscroll");
+			image.style.transform = "rotate(" + window.pageYOffset / 4 + "deg)";
+		}
+
+		function clickedBox() {
+			let element = document.getElementById(event.srcElement.id);
+			element.classList.toggle('active');
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<div class="box dreh">
+		<p>Dreh</p>
+	</div>
+	<script>
+		function reset(elem) {
+			elem.style.top = "0px";
+		}
+
+	</script>
+	<div class="box bounce" onmouseout="reset(this)">
+		<p>Bouncy</p>
+		<p class="small">(hover me!)</p>
+	</div>
+
+	<div class="box" id="boxclick" onclick="clickedBox()">
+		<p>Interactive</p>
+		<p class="small">(click me!)</p>
+	</div>
+
+	<div class="box" id="drehscroll">
+		<p>Dreh</p>
+		<p class="small">Scroll site!</p>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+main {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+article {
+	background-color: #DDD;
+	margin: 20px;
+	padding: 20px;
+	flex: 200px;
+}
+
+#artikel2 {
+	flex: 0 1 auto;
+	width: 50%;
+	background-color: coral;
+}

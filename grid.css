@@ -1,0 +1,27 @@
+main {
+	padding:0;
+	display: grid;
+	grid-gap: 14px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+article {
+	background-color: #DDD;
+	margin: 0;
+	padding: 20px;
+}
+
+#artikel2 {
+	grid-column: span 2;
+	background-color: coral;
+}
+
+#artikel3 {
+	grid-row: span 2;
+}
+
+#artikel4 {
+	background-color: aqua;
+	grid-row: 2 / span 2;
+	grid-column: 3;
+}

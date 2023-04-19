@@ -1,0 +1,98 @@
+body {
+	padding: 20px;
+	height: 9999px;
+}
+
+.box {
+	width: 120px;
+	height: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	border-radius: 4px;
+	margin: 40px;
+}
+
+.box p {
+	margin: 0;
+}
+
+.box .small {
+	font-size: 0.6rem;
+}
+
+.bounce {
+	background-color: orangered;
+	color: yellow;
+	margin-top: 50px;
+	animation-duration: 0.3s;
+	animation-name: bounce;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-out;
+	animation-play-state: paused;
+	position: relative;
+}
+
+.bounce:hover {
+	animation-play-state: running;
+}
+
+.bounce:not( :hover) {
+	/*	color: aqua;*/
+}
+
+@keyframes bounce {
+	from {
+		top: 0px;
+	}
+
+	to {
+		top: -30px;
+	}
+}
+
+.dreh {
+	background-color: forestgreen;
+	color: white;
+	margin-top: 50px;
+	animation-duration: 5s;
+	animation-name: dreh;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	position: relative;
+}
+
+@keyframes dreh {
+	from {
+		rotate: 0;
+	}
+
+	to {
+		rotate: 360deg;
+	}
+}
+
+#boxclick {
+	background-color: dodgerblue;
+	color: white;
+	position: relative;
+	left: 0;
+	transition: left 0.2s;
+	cursor: pointer;
+}
+
+#boxclick.active {
+	background-color: red;
+	left: 50%;
+}
+
+#drehscroll {
+	color: white;
+	position: fixed;
+	top: 30px;
+	right: 30px;
+	background-color: darkorchid;
+}
