@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Interaktive Elemente</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .box {
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        display: inline-block;
+        transition: 0.4s;
+        margin: 4px;
+        cursor: pointer;
+      }
+      .box div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 30px;
+        pointer-events: none;
+        user-select: none;
+      }
+      .red {
+        background-color: red;
+        border-radius: 0;
+        width: 50px;
+      }
+      #message {
+        color: blue;
+      }
+    </style>
+
+    <script>
+      // JavaScript code goes here
+
+      var counter = 0;
+
+      function setup() {
+        // const myHeading = document.querySelector("#headline");
+        const myHeading = document.getElementById("headline");
+        myHeading.textContent = "Hello!";
+
+        createElements();
+      }
+
+      function clickButton() {
+        counter++;
+        var contentElement = document.getElementById("myContent");
+        var newElement = document.createElement("h2");
+
+        newElement.textContent = "My new element " + counter;
+        contentElement.appendChild(newElement);
+      }
+
+      function createElements() {
+        // var oldCircles = document.querySelectorAll(".generated");
+        oldCircles = document.getElementsByClassName("generated");
+        console.log(oldCircles);
+        // remove old circles
+        oldCircles.forEach((element) => {
+          element.remove();
+        });
+
+        const myCircle = document.getElementById("myCircle");
+        numberOfCircles = 12;
+        for (var i = 1; i <= numberOfCircles; i++) {
+          const newCircle = myCircle.cloneNode();
+          newCircle.innerHTML = "<div>" + i + "</div>";
+          myCircle.style.display = "inline-block";
+          myCircle.classList.add = "generated";
+          myCircle.parentNode.appendChild(newCircle);
+        }
+        myCircle.style.display = "none";
+      }
+
+      function updateName(e) {
+        const myHeading = document.getElementById("headline");
+        myHeading.textContent = "Hello " + e.target.value + "!";
+        // myHeading.textContent = `Hello ${e.target.value}!`;
+      }
+
+      function clickBox(e) {
+        clickedElement = e.target;
+        clickedElement.classList.toggle("red");
+      }
+
+      function removeSelectedElements() {
+        var elementsToDelete = document.querySelectorAll(".red");
+        var message;
+        if (elementsToDelete.length == 0) {
+            message = "No elements selected."
+        }
+        else if (elementsToDelete.length == 1) {
+            message = "Removed 1 element."
+        }
+        else {
+            message = "Removed " + elementsToDelete.length + " elements.";
+        }
+        document.querySelector("#message").textContent = message;
+        setTimeout(() => {
+            document.querySelector("#message").textContent = "";            
+        }, 800);
+
+        // delete selected elements
+        elementsToDelete.forEach((element) => {
+          element.remove();
+        });
+        // Alternative: use a for loop
+        // for (var i=0; i<elementsToDelete.length; i++) {
+        //     elementsToDelete[i].remove();
+        // }
+      }
+    </script>
+  </head>
+
+  <body class="myClass" onload="setup()">
+    <main>
+    <h1>Beispiele für interaktive Elemente</h1>
+    <p>
+      Event Handler: onclick, onkeyup, onload, onmousemove, onmouseenter,...
+    </p>
+
+    <section>
+      <h3>Verändern von Content</h3>
+      <h1 id="headline"></h1>
+
+      <label for="myName">Your name:</label>
+      <input id="myName" onkeyup="updateName(event)" />
+    </section>
+
+    <section>
+      <h3>Verändern von Elementen</h3>
+      <div>
+        <div id="myCircle" class="box" onclick="clickBox(event)"></div>
+      </div>
+      <div class="alignFlex">
+      <button onclick="removeSelectedElements()">Remove selected elements</button>
+      <button onclick="createElements()">Reset elements</button>
+
+      <p id="message"> </p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Hinzufügen von Elementen</h3>
+      <button onclick="clickButton()">Create element</button>
+
+      <div id="myContent" style="background-color: rgb(224, 224, 224)"></div>
+    </section>
+    <a href="index.html">Zurück zur Übersicht</a>
+  </body>
+</main>
+</html>

@@ -74,14 +74,35 @@ hr {
 code,
 pre {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.9em;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
   color: #666;
   background-color: #e8e8e8;
   padding: 16px;
 }
 
+button {
+  border: none;
+  background-color: #d6d4d4;
+  border-radius: 999px;
+  min-height: 60px;
+  padding: 20px 40px;
+  margin: 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: rgb(134, 134, 134);
+}
+
+input {
+  border: none;
+  background-color: #d6d4d4;
+}
+
 footer {
-  border-top: 2px solid #666;
+  border-top: 2px solid #f3f3f3;
   margin-top: 40px;
   padding: 40px;
 }
