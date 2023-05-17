@@ -23,6 +23,7 @@ function setup() {
   fieldElements.forEach((element) => {
     element.classList.remove("player1");
     element.classList.remove("player2");
+    element.classList.remove("winner");
   });
 
   gameRunning = true;
@@ -49,6 +50,15 @@ function clickField(e) {
       gameRunning = false;
       document.querySelector("#currentplayerbox").style = "display:none";
       document.querySelector("#onwin").style = "display:block";
+      // highlight winning fields
+      fieldsWinner.forEach((field) => {
+        var row = field[0];
+        var col = field[1];
+        var fieldElement = document.querySelector(
+          '[data-row="' + row + '"][data-col="' + col + '"]'
+        );
+        fieldElement.classList.add("winner");
+      });
     } else if (checkIfDraw()) {
       // draw
       document.querySelector("#currentplayerbox").style = "display:none";
