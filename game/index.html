@@ -23,9 +23,21 @@
         <div data-row="2" data-col="1" onclick="clickField(event)"></div>
         <div data-row="2" data-col="2" onclick="clickField(event)"></div>
       </div>
-      <div id="currentplayerbox">
+      <div id="currentplayerbox" class="flex">
         Current Player:
-        <div id="currentplayer"></div>
+        <div data-currentplayer=""></div>
+      </div>
+      <div id="ondraw" class="flex">
+        <p>It's a draw!</p>
+        <button onclick="setup()">Restart game</button>
+      </div>
+      <div id="onwin">
+        <div class="flex">
+          <p>Player</p>
+          <div data-currentplayer=""></div>
+          <p>won!</p>
+        </div>
+        <button onclick="setup()">Restart game</button>
       </div>
     </main>
   </body>
