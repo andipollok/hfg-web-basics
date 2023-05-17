@@ -9,17 +9,19 @@ body {
 }
 
 #playarea > div {
-  background-color: rgb(129, 129, 242);
+  background-color: #fff;
 }
 
 #playarea > div:nth-of-type(2n) {
-  background-color: lightblue;
+  background-color: #eee;
 }
 
-.player1 {
-  background-color: red;
+#playarea > div.player1 {
+  background-image: url(circle.svg);
+  background-size: contain;
 }
 
-.player2 {
-  background-color: green;
+#playarea > div.player2 {
+  background-image: url(cross.svg);
+  background-size: contain;
 }
