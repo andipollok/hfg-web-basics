@@ -12,6 +12,7 @@ function setup() {
     [0, 0, 0],
     [0, 0, 0],
   ];
+  updateCurrentPlayer();
   // var playarea = document.querySelector("#playarea");
 
   // for (var row = 0; row < 3; row++) {
@@ -26,6 +27,10 @@ function setup() {
   //   }
   // }
 }
+function updateCurrentPlayer() {
+  document.querySelector("#currentplayer").classList.value =
+    "player" + currentPlayer;
+}
 
 function clickField(e) {
   var clickedField = e.target;
@@ -38,5 +43,6 @@ function clickField(e) {
     // clickedField.innerHTML = currentPlayer;
 
     currentPlayer = currentPlayer == 1 ? 2 : 1;
+    updateCurrentPlayer();
   }
 }

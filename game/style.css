@@ -6,6 +6,8 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
 #playarea > div {
@@ -16,12 +18,25 @@ body {
   background-color: #eee;
 }
 
-#playarea > div.player1 {
+#playarea > div.player1,
+#currentplayer.player1 {
   background-image: url(circle.svg);
   background-size: contain;
 }
 
-#playarea > div.player2 {
+#playarea > div.player2,
+#currentplayer.player2 {
   background-image: url(cross.svg);
   background-size: contain;
+}
+
+#currentplayerbox {
+  display: flex;
+  gap: 8px;
+  justify-content: baseline;
+}
+#currentplayer {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }
