@@ -33,7 +33,7 @@ function clickField(e) {
   var col = clickedField.getAttribute("data-col");
 
   if (data[row][col] == 0) {
-    // data[row][col] = currentPlayer;
+    data[row][col] = currentPlayer;
     clickedField.classList.add("player" + currentPlayer);
     // clickedField.innerHTML = currentPlayer;
 
